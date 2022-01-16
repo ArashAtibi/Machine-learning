@@ -7,6 +7,7 @@ from skimage import io, img_as_ubyte
 import random
 import os
 from scipy.ndimage import rotate
+import albumentations as A
 
 
 
