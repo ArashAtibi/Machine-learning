@@ -25,7 +25,7 @@ aug = A.Compose([
     A.RandomRotate90(p=0.5),
     A.HorizontalFlip(p=1),
     A.Transpose(p=1),
-        A.GridDistortion(p=1)
+    A.GridDistortion(p=1)
     ]
 )
 
