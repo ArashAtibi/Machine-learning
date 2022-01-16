@@ -1,3 +1,4 @@
+""" this code can be used as an illustrator to increase the training dataset from a limited set of training data """
 #!git clone https://github.com/hoangp/isbi-datasets.git ## run once to get the data set
 
 import numpy as np
@@ -25,13 +26,13 @@ aug = A.Compose([
     A.RandomRotate90(p=0.5),
     A.HorizontalFlip(p=1),
     A.Transpose(p=1),
-    A.GridDistortion(p=1)
+        A.GridDistortion(p=1)
     ]
 )
 
-directory_img = "new_images/new_img100" # path to store new images
+directory_img = "new_img100" # path to store new images
   
-directory_lbl = "new_images/new_lbl100"
+directory_lbl = "new_lbl100"
 
 parent_dir = "/content/isbi-datasets/data/"
   
@@ -63,5 +64,5 @@ for i in range(1, number_of_new_images+1, 1):
     new_image_path= "%s/new_image_%s.png" %(new_img_path, i) #generating new images in the new address
     new_label_path = "%s/new_label_%s.png" %(new_lbl_path, i)
     io.imsave(new_image_path, transformed_image)
-    io.imsave(new_mask_path, transformed_mask)
+    io.imsave(new_label_path, transformed_label)
   
